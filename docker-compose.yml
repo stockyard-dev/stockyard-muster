@@ -1,0 +1,9 @@
+services:
+  muster:
+    image: ghcr.io/stockyard-dev/stockyard-muster:latest
+    ports: ["8910:8910"]
+    environment: [PORT=8910, DATA_DIR=/data]
+    volumes: [muster-data:/data]
+    restart: unless-stopped
+volumes:
+  muster-data:
